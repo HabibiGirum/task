@@ -8,3 +8,11 @@ def check_droplet_ssh():
                 return False
     return True
 
+import os
+from pydo import Client
+
+client = Client(token=os.environ.get("DIGITALOCEAN_TOKEN"))
+
+resp = client.load_balancers.get(lb_id="afda3ad")
+Load balancer unhealthy host count monitored (DigitalOcean)
+
